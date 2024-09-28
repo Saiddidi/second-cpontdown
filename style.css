@@ -1,0 +1,67 @@
+/* Body Styling */
+body {
+  background-color: #000; /* Black background */
+  color: #ff3d5e; /* Main theme color */
+  font-family: "Arial", sans-serif; /* Clean, simple font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.countdown-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #111; /* Dark container background */
+  box-shadow: 0 0 20px rgba(255, 61, 94, 0.5); /* Subtle glow */
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #ff3d5e; /* Main theme color */
+}
+
+/* Countdown Box Styling */
+#countdown {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.time {
+  font-size: 18px;
+  background-color: #222; /* Darker box for contrast */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+/* Number Styling */
+span {
+  font-size: 36px;
+  font-weight: bold;
+  display: block;
+  color: #ffd700; /* Bright yellow for numbers */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #countdown {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+
+  span {
+    font-size: 30px;
+  }
+}
