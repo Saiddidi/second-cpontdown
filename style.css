@@ -1,53 +1,96 @@
 /* Body Styling */
 body {
-  background-color: #000; /* Black background */
+  background: linear-gradient(
+    to bottom,
+    #0d0d0d,
+    #111
+  ); /* Dark gradient background */
   color: #ff3d5e; /* Main theme color */
   font-family: "Arial", sans-serif; /* Clean, simple font */
   display: flex;
+  flex-direction: column; /* Adjust for footer */
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
+/* Countdown Container Styling */
 .countdown-container {
   text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #111; /* Dark container background */
-  box-shadow: 0 0 20px rgba(255, 61, 94, 0.5); /* Subtle glow */
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #1a1a1a; /* Darker container background */
+  box-shadow: 0 4px 30px rgba(255, 61, 94, 0.7); /* Soft glowing effect */
 }
 
 /* Heading Styling */
 h1 {
-  font-size: 24px;
-  margin-bottom: 30px;
+  font-size: 26px;
+  margin-bottom: 40px;
   color: #ff3d5e; /* Main theme color */
+  text-shadow: 0 0 15px rgba(255, 61, 94, 0.6); /* Glowing text effect */
 }
 
 /* Countdown Box Styling */
 #countdown {
   display: flex;
   justify-content: space-around;
-  gap: 20px;
+  gap: 30px;
 }
 
 .time {
-  font-size: 18px;
-  background-color: #222; /* Darker box for contrast */
-  padding: 15px;
-  border-radius: 8px;
+  font-size: 20px;
+  background-color: #2a2a2a; /* Darker box for contrast */
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
   color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+}
+
+.time:hover {
+  box-shadow: 0 0 25px rgba(255, 61, 94, 0.9); /* Bright glow effect on hover */
+  transform: translateY(-5px); /* Slight lift effect */
 }
 
 /* Number Styling */
 span {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bold;
   display: block;
   color: #ffd700; /* Bright yellow for numbers */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Subtle glow on numbers */
+  transition: transform 0.2s ease-in-out; /* Smooth scaling */
+}
+
+span:active {
+  transform: scale(1.1); /* Slight scale on click */
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 40px;
+  padding: 12px 0;
+  background-color: #1a1a1a; /* Dark footer */
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  border-top: 2px solid #ff3d5e;
+  position: absolute;
+  bottom: 0;
+}
+
+footer a {
+  color: #ffd700; /* Bright yellow for links */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -58,10 +101,12 @@ span {
   }
 
   .time {
-    font-size: 16px;
+    font-size: 18px;
+    padding: 12px;
   }
 
   span {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
+
