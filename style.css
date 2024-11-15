@@ -1,91 +1,98 @@
-/* Body Styling */
+:root {
+  --theme-color: #ff3d5e;
+  --secondary-color: #ffd700;
+  --bg-color: #0d0d0d;
+  --bg-gradient-end: #111;
+  --container-bg: #1a1a1a;
+  --box-bg: #2a2a2a;
+  --text-color: #fff;
+  --shadow-color: rgba(255, 61, 94, 0.7);
+  --hover-glow: rgba(255, 61, 94, 0.9);
+}
+
 body {
   background: linear-gradient(
     to bottom,
-    #0d0d0d,
-    #111
-  ); /* Dark gradient background */
-  color: #ff3d5e; /* Main theme color */
-  font-family: "Arial", sans-serif; /* Clean, simple font */
+    var(--bg-color),
+    var(--bg-gradient-end)
+  );
+  color: var(--theme-color);
+  font-family: "Arial", sans-serif;
   display: flex;
-  flex-direction: column; /* Adjust for footer */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   overflow: hidden;
+  padding-bottom: 60px; /* Avoid footer overlap */
 }
 
-/* Countdown Container Styling */
 .countdown-container {
   text-align: center;
   padding: 30px;
   border-radius: 12px;
-  background-color: #1a1a1a; /* Darker container background */
-  box-shadow: 0 4px 30px rgba(255, 61, 94, 0.7); /* Soft glowing effect */
+  background-color: var(--container-bg);
+  box-shadow: 0 4px 30px var(--shadow-color);
 }
 
-/* Heading Styling */
 h1 {
   font-size: 26px;
   margin-bottom: 40px;
-  color: #ff3d5e; /* Main theme color */
-  text-shadow: 0 0 15px rgba(255, 61, 94, 0.6); /* Glowing text effect */
+  color: var(--theme-color);
+  text-shadow: 0 0 15px var(--shadow-color);
 }
 
-/* Countdown Box Styling */
 #countdown {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
 .time {
   font-size: 20px;
-  background-color: #2a2a2a; /* Darker box for contrast */
+  background-color: var(--box-bg);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+  color: var(--text-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .time:hover {
-  box-shadow: 0 0 25px rgba(255, 61, 94, 0.9); /* Bright glow effect on hover */
-  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 0 25px var(--hover-glow);
+  transform: translateY(-5px);
 }
 
-/* Number Styling */
 span {
   font-size: 40px;
   font-weight: bold;
   display: block;
-  color: #ffd700; /* Bright yellow for numbers */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Subtle glow on numbers */
-  transition: transform 0.2s ease-in-out; /* Smooth scaling */
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s ease-in-out;
 }
 
 span:active {
-  transform: scale(1.1); /* Slight scale on click */
+  transform: scale(1.1);
 }
 
-/* Footer Styling */
 footer {
-  margin-top: 40px;
-  padding: 12px 0;
-  background-color: #1a1a1a; /* Dark footer */
-  color: #fff;
-  width: 100%;
+  background-color: var(--container-bg);
+  color: var(--text-color);
+  border-top: 2px solid var(--theme-color);
   text-align: center;
   font-size: 14px;
-  border-top: 2px solid #ff3d5e;
+  width: 100%;
   position: absolute;
   bottom: 0;
+  padding: 12px 0;
 }
 
 footer a {
-  color: #ffd700; /* Bright yellow for links */
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
@@ -109,4 +116,21 @@ footer a:hover {
     font-size: 32px;
   }
 }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .time {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  span {
+    font-size: 28px;
+  }
+}
+
 
